@@ -1,0 +1,1 @@
+export const FULL_RECIPE = "FULL_RECIPE"
