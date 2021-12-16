@@ -5,11 +5,12 @@ import RecipeSearch from './components/RecipeSearch';
 import NutritionData from './components/NutritionData';
 import Home from './components/Home';
 import Favorite from './components/Favorite';
+import Profile from './components/profile'
 import Aboutus from './components/Aboutus';
 import Page404 from './components/Page404';
 import RecipeCard from './components/RecipeCard';
 import ItemCard from './components/ItemCard';
-import Registration from '../src/components/Registration';
+import ProtectedRoute from './Auth/protectedRoute';
 import Auth0ProviderWithHistory from "./Auth/auth0-provider-with-history";
 import './App.css';
 
@@ -18,6 +19,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+
 
 class App extends Component {
   constructor(props) {
@@ -48,12 +50,12 @@ class App extends Component {
             <Route path="/home">
               <Home/>
             </Route>
-            <Route path="/search">
+            <ProtectedRoute path="/search">
               <RecipeSearch/>
-            </Route>
-            <Route path="/favorite">
+            </ProtectedRoute>
+            <ProtectedRoute path="/favorite">
               <Favorite/>
-            </Route>
+            </ProtectedRoute>
             <Route path="/404">
               <Page404/>
             </Route>
@@ -69,9 +71,9 @@ class App extends Component {
             <Route path="/solo">
               <ItemCard/>
             </Route>
-            <Route path="/registration">
-              <Registration/>
-            </Route>
+            <ProtectedRoute path="/profile">
+              <Profile/>
+            </ProtectedRoute>
           </Switch>
           </Auth0ProviderWithHistory>
         </Router>
