@@ -6,8 +6,8 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 const Auth0ProviderWithHistory = ({ children }) => {
   const history = useHistory();
-  const domain = "dev-oalrznsx.us.auth0.com";
-  const clientId ="54S0q4qoMvZZP0Eibr6GLG7mEEB0MD8l";  //passed as props to provider below
+  const domain = process.env.REACT_APP_AUTH0_DOMAIN; 
+  const clientId =process.env.REACT_APP_AUTH0_CLIENT_ID;  //passed as props to provider below
   const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
 
   //Redirect to Page when user logs in
@@ -17,7 +17,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
 
   // Give access to auth0 values to any child component in app
   return (
-    <Auth0Provider domain={domain} clientId={clientId} redirectUri="https://localhost:3000" onRedirectCallback={onRedirectCallback} audience={audience}>
+    <Auth0Provider domain={domain} clientId={clientId} redirectUri="https://localhost:3006" onRedirectCallback={onRedirectCallback} audience={audience}>
       {children}
     </Auth0Provider>
   );
