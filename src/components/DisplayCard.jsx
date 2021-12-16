@@ -36,7 +36,6 @@ const DisplayCard = (props) => {
                 <div>
                   <Button onClick={() => recipeCard(individualRecipe)}>
                     
-                    {/* <BsInfoSquare size="24" className="react-icon" /> */}
                   </Button>
                 </div>
               </Col>
