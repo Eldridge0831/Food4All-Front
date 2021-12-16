@@ -11,7 +11,7 @@ function Navbar() {
         <div className="Navbar" style={{"display":"flex","justifyContent":"space-evenly"}} >
             <img src={logo} alt="logo" width = "40rem" />
             <Link to="/home"style={{ textDecoration: "none" }} className="nav-link" >Home</Link>
-            <Link to="/favorite" style={{ textDecoration: "none" }} className="nav-link">Favorites</Link>
+            <Link to="/favorite" style={{ textDecoration: "none" }} className="nav-link">My Cookbook</Link>
             <Link to="/aboutus" style={{ textDecoration: "none" }} className="nav-link">About Us</Link>
             
             

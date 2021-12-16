@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import {
@@ -11,12 +11,7 @@ import {
   } from 'cdbreact';
 
 
- 
-import * as FaIcons from 'react-icons/fa';
-import * as AiIcons from 'react-icons/ai';
-
 function Sidebar () {
-    const [isOpen, setIsOpen] = useState()
     
     return (
 
@@ -39,7 +34,7 @@ function Sidebar () {
               <Link to="/profile" style={{ textDecoration: "none" }}className="nav-link">
                 <CDBSidebarMenuItem icon="user">Profile page</CDBSidebarMenuItem>
               </Link>
-              <a href="https://www.webmd.com/diet/a-z/evaluate-latest-diets" target="_blank"style={{ textDecoration: "none" }}className="nav-link">
+              <a href="https://www.webmd.com/diet/guide/default.htm" rel="noreferrer" target="_blank"style={{ textDecoration: "none" }}className="nav-link">
                 <CDBSidebarMenuItem icon="chart-line">Diet Information</CDBSidebarMenuItem></a>
               
               
