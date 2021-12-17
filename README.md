@@ -37,4 +37,6 @@ Food for All is an application developed in December of 2021.  The purpose behin
 - Tim  (Login, Registration, Jira/Repo Setup)
 - Charles Eldridge - (React/Redux, API call GURU, ReadME, Scrum Master)
 
-![githubimage] ("https://
+<a href="https://github.com/Eldridge0831/Food4All-Front/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Eldridge0831/Food4All-Front" />
+</a>
