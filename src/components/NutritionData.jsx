@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Button, Row, Col } from 'react-bootstrap';
+import { Button, Row, Col, Form } from 'react-bootstrap';
 import NutritionCard from './NutritionCard';
 import { useHistory } from "react-router-dom";
 // import { setItemCard } from "../Redux/actions/ItemCard-action";
@@ -60,8 +60,17 @@ function NutritionData (props) {
         <div>
             <div className="NutritionData">
                 <h1>Food Nutrition & Alternatives</h1>
-                <input value={searchValue} onChange={(event) => searchRequest(event)} type="text" placeholder="Your Item" />
-                <Button type="submit" onClick={(event) => fetchNutrition(event)}>Search</Button>
+                <Form onSubmit={fetchNutrition} className="mb-3">
+                    <Row className="mb-3">
+                        <Col md />
+                        <Col md>
+                        <Form.Control value={searchValue} onChange={searchRequest} type="text" placeholder="ingredient" required />
+                        </Col>
+                        <Col md />
+                    </Row>
+                {/* <input value={searchValue} onChange={searchRequest} type="text" placeholder="Your Item" /> */}
+                <Button type="submit" class="btn btn-primary btn-sm" onClick={(event) => fetchNutrition(event)}>Search</Button>
+                </Form>
             </div>
             <div className="recipe-container">
                 <Row>

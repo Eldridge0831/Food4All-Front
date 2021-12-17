@@ -31,7 +31,7 @@ const NutritionCard = (props) => {
 
   return (
     <div className="option-card-container">
-      <Card style={{ width: "16rem" }}>
+      <Card style={{ width: "10rem" }}>
         <Card.Img
           className="optionCard-pic"
           variant="top"
@@ -45,8 +45,7 @@ const NutritionCard = (props) => {
               <Col>
                 <div>
                   <Button onClick={() => itemCard(optionItem)}>
-                    
-                    {/* <BsInfoSquare size="24" className="react-icon" /> */}
+                    Select
                   </Button>
                 </div>
               </Col>
