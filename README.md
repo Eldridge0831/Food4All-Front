@@ -7,7 +7,7 @@ Food for All is an application developed in December of 2021.  The purpose behin
     -Node
     -React
     -Redux
-    
+    -Passport
     -Express
     -Sequelize
     -PostgreSQL
