@@ -47,7 +47,7 @@ class App extends Component {
         <Navbar />{" "}
         <Sidebar />
           <Switch>
-            <Route path="/home">
+            <Route exact path="/">
               <Home/>
             </Route>
             <ProtectedRoute path="/search">

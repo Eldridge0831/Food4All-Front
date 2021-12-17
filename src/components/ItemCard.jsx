@@ -44,8 +44,8 @@ function ItemCard() {
                                     <Row>
                                         <Col>
                                             <div>
-                                                <Button onClick={(event) => (event)}>
-                                                </Button>
+                                                {/* <Button onClick={(event) => (event)}>
+                                                </Button> */}
                                             </div>
                                         </Col>
                                     </Row>

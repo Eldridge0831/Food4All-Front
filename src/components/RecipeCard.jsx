@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.css';
-import { Card, Col, Row, Tab, Tabs, ListGroup, Button } from 'react-bootstrap';
+import { Card, Col, Row, Tab, Tabs, ListGroup, Button, FormControl } from 'react-bootstrap';
+import InputGroup from 'react-bootstrap/InputGroup';
 import { FaBookOpen } from "react-icons/fa"; //for favoriting recipes
 import { FaRedoAlt } from "react-icons/fa";
 import { FaMinusCircle } from "react-icons/fa";
@@ -11,23 +12,24 @@ function RecipeCard() {
     const [disableCookbook, setDisableCookbook] = useState(false);
     const [disableUpdate, setDisableUpdate] = useState(true);
     const [disableDelete, setDisableDelete] = useState(true);
+    const [comments, setComments] = useState("");
 
     const singleRecipeData = useSelector((state) => state.singleRecipeReducer);
     const recipe = singleRecipeData[0]
 
     // function postCookbook() {
     //     const sessionUserName = localStorage.getItem("UserId")
-    //     fetch("http://localhost:", {
+    //     fetch("http://localhost:9000/favorite", {
     //         method: "POST",
     //         headers: {
     //             // Accept: "application/json",
     //             "Content-Type": "application/json",
     //         },
     //         body: JSON.stringify({
-    //             user_id: sessionUserName,
+    //             id: sessionUserName,
     //             category: 
     //             recipe: singleRecipeData,
-    //             comments: document.getElementById("location_of_ride").value,
+    //             commentSection: comments,
     //         }),
     //     })
     //         .then(res => (res.json()))
@@ -49,16 +51,17 @@ function RecipeCard() {
     //             "Content-Type": "application/json",
     //         },
     //         body: JSON.stringify({
-    //             user_id: user_Name,
-    //             category: document.getElementById("first_name").value,
-    //             recipe: document.getElementById("last_name").value,
-    //             comments: document.getElementById("skill_level").value,
+    //             id: user_Name,
+    //             category: ,
+    //             recipe: singleRecipeData,
+    //             commentSection: comments,
+    //             recipe_id:  recipe.label
                 
     //         }),
     //     })
     //         .then(res => (res.json()))
     //         .then(res => {
-    //             alert("Succesfully Changed Account")
+    //             alert("Succesfully Updated Recipe")
     //         })
 
 
@@ -73,7 +76,7 @@ function RecipeCard() {
     //             "Content-Type": "application/json",
     //         },
     //         body: JSON.stringify({
-    //             location_of_ride: document.getElementById("location").value,
+    //             recipe_id: recipe.label
     //             user_name: localStorage.getItem("UserName"),
     //         }),
     //     })
@@ -84,6 +87,11 @@ function RecipeCard() {
     //             }
     //         })
     // }
+
+    const handleChange = (event) => {
+        setComments(event.target.value)
+        console.log(comments)
+    }
 
 
     // Detailed recipe card
@@ -142,7 +150,9 @@ function RecipeCard() {
                         <Tab eventKey="comments" title="Comments">
                             <Row>
                                 <Col md="8">
-                                    <textarea></textarea>
+                                    <InputGroup>
+                                        <FormControl as = "textarea" rows = "5" value = {comments} onChange = { handleChange } />
+                                    </InputGroup>
                                 </Col>
                             </Row>
                         </Tab>

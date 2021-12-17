@@ -34,9 +34,7 @@ const DisplayCard = (props) => {
             <Row>
               <Col>
                 <div>
-                  <Button onClick={() => recipeCard(individualRecipe)}>
-                    
-                  </Button>
+                  <Button variant="primary" onClick={() => recipeCard(individualRecipe)}>Details</Button>
                 </div>
               </Col>
             </Row>
