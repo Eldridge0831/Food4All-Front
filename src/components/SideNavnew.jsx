@@ -54,7 +54,7 @@ function Sidebar  () {
                     padding: "20px 5px"
                   }}
                 >
-                  <img src={logo} alt="logo"  margin-right="20px"  width = "40rem" />
+                  <img src={logo} alt="logo"  id="sideNavLogo"  width = "40rem" />
 
                   Food For All
                 </div>

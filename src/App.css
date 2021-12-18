@@ -1,54 +1,80 @@
-.Recipe-card-container, .sc-dPiLbb ,.ina-DuF{
-
+.Recipe-card-container,
+.sc-dPiLbb,
+.ina-DuF {
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgb(63, 60, 60);
   margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-image: linear-gradient(to right, 
-      #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, 
-      #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
+  background-image: linear-gradient(
+    to right,
+    #e4afcb 0%,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #e2c58b 30%,
+    #c2ce9c 64%,
+    #7edbdc 100%
+  );
   align-items: center;
   min-width: 40%;
-  font-family: 'Lobster', cursive;   
+  font-family: "Lobster", cursive;
 }
-.recipe-container{
+.recipe-container {
   margin-left: 21%;
   margin-right: 15%;
 }
-.nutritionData{
+.nutritionData {
   margin-top: 20px;
 }
 
-.g-0, .gy-0 {
-  background-image: linear-gradient(to right, 
-      #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, 
-      #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%)
-
+.g-0,
+.gy-0 {
+  background-image: linear-gradient(
+    to right,
+    #e4afcb 0%,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #e2c58b 30%,
+    #c2ce9c 64%,
+    #7edbdc 100%
+  );
 }
 .goTzNP.toggled {
-  
+  padding: 0px;
+}
 
-  padding: 10px
-;
+.hYdpPE.toggled {
+  
+  padding: 5px;
 }
-.sc-AjmGg, .goTzNP{
+.sc-AjmGg,
+.goTzNP {
   border-radius: 25px;
-  background-image: linear-gradient(to right, 
-  #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, 
-  #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%)
-   
+  background-image: linear-gradient(
+    to right,
+    #e4afcb 0%,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #e2c58b 30%,
+    #c2ce9c 64%,
+    #7edbdc 100%
+  );
 }
-.Navbar{
+.Navbar {
   display: flex;
-  background-image: linear-gradient(to right, 
-      #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, 
-      #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
-      padding: 10px;
+  background-image: linear-gradient(
+    to right,
+    #e4afcb 0%,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #e2c58b 30%,
+    #c2ce9c 64%,
+    #7edbdc 100%
+  );
+  padding: 10px;
 }
 .navbar-nav {
-  
   display: flex;
   flex-direction: column;
   padding-left: 0;
@@ -56,6 +82,14 @@
   padding-right: 20px;
   margin-bottom: 0;
   list-style: none;
+}
+
+.h1 {
+  font-size: calc(1.375rem + 1.5vw);
+  padding-top: 20px;
+}
+.search {
+  margin-left: 15px;
 }
 .sideNav {
   position: fixed;
@@ -67,40 +101,47 @@
   padding: 20px;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  background-color: #f5f5f5;
+  background-image: linear-gradient(
+    to right,
+    #e4afcb 0%,
+    #b8cbb8 0%,
+    #b8cbb8 0%,
+    #e2c58b 30%,
+    #c2ce9c 64%,
+    #7edbdc 100%
+  );
   border-right: 1px solid #eee;
-  }
-
+}
 
 .App {
   text-align: center;
 }
-
+#sideNavLogo{
+  margin-bottom: 20px;
+}
 .img {
   height: 40vmin;
   pointer-events: none;
   
 }
-#searchContainer{
-  display:-webkit-inline-grid;
+#sNlogo{
+  margin-right:20px;
+}
+#searchContainer {
+  display: -webkit-inline-grid;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  width:60%;
+  width: 60%;
   padding-top: 20px;
   margin: top 20px;
-  margin-bottom:20px
+  margin-bottom: 20px;
 }
-.row{
-  
+.row {
   flex-direction: row;
-  align-items:center;
-  min-height:fit-content
-  
+  align-items: center;
+  min-height: fit-content;
 }
-
-
-
 
 .App-header {
   background-color: #282c34;
@@ -112,6 +153,3 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-
-
