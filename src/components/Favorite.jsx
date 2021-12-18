@@ -14,7 +14,7 @@ function Favorite(props) {
 
         console.log ("activated")
         // const user_id = localStorage.getItem("UserID");
-        let url = "http://localhost:9000/users/user";
+        let url = "http://localhost:9000/favorite";
         fetch(url, {
             method: "GET",
             headers: {

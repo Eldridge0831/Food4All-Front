@@ -4,9 +4,6 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { setItemCard } from "../Redux/actions/ItemCard-action";
 import NoPicture from "../assets/no-picture-available-icon.jpg";
-// import { setNutritionCard } from "../Redux/actions/NutritionCard-action";
-// import { BsInfoSquare } from "react-icons/bs"; // Information Icon
-
 
 
 const NutritionCard = (props) => {
@@ -14,7 +11,6 @@ const NutritionCard = (props) => {
   const history = useHistory();
   const optionItem = props.item;
   let picSrc = "";
-//   console.log(optionItem);
 
   const pic = (optionItem.image)
   console.log(pic);
