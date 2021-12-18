@@ -6,10 +6,9 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 const Auth0ProviderWithHistory = ({ children }) => {
   const history = useHistory();
-  // const domain = process.env.REACT_APP_AUTH0_DOMAIN; 
-  const clientId =process.env.GOOGLE_CLIENT_ID; 
-  const clientSecret= process.env.GOOGLE_CLIENT_SECRET //passed as props to provider below
-  // const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
+  const domain = process.env.REACT_APP_AUTH0_DOMAIN; 
+  const clientId =process.env.GOOGLE_CLIENT_ID;  //passed as props to provider below
+  const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
 
   //Redirect to Page when user logs in
   const onRedirectCallback = (appState) => {

@@ -2,6 +2,7 @@ import React from 'react';
 import {render} from 'react-dom';
 import './index.css';
 import App from './App';
+// import "./Auth/trusted-security-policies";
 import {Provider} from 'react-redux';
 import rootReducer from './Redux/reducers/rootReducer';
 import { createStore } from "redux";
