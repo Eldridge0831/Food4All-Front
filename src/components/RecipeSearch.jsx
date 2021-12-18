@@ -30,20 +30,18 @@ function RecipeSearch(props) {
         // Attaching labels to input variables before API Call insertion
         if (inputExclude !== "") {
             exclusions = "excluded=" + inputExclude
-            console.log(exclusions);
         };
 
         if (inputTime !== "") {
             time = ("time=" + inputTime);
-            console.log(time)
         };
 
         const url = (`https://api.edamam.com/api/recipes/v2?type=public&q=${inputValue}&app_id=4cb19fd5&app_key=d2763a8995b7eef7f64d6158309567ca&${inputDiet}&${inputHealth}&${exclusions}&${time}&${inputCuisine}&${inputMealType}&${inputDishType}`)
-        console.log(url)
+        // console.log(url)
         return axios.get(url)
             .then(recipes => recipes.data)
             .then(data => {
-                console.log(data);
+                // console.log(data);
 
                 if (data['hits'].length === 0) {
                     console.log(data['hits'])
@@ -60,29 +58,26 @@ function RecipeSearch(props) {
 
     // Section to handle search input request, changing assigned local states
     const handleRequest = (event) => {
-        console.log("request made")
         setInputValue(event.target.value)
     }
 
     const handleRequest3 = (event) => {
         setInputExclude(event.target.value)
-        console.log(inputExclude)
     }
 
     const handleRequest4 = (event) => {
         setInputTime(event.target.value)
-        console.log(inputTime)
     }
 
     // function for pagination
     const nextPage = () => {
         setPreviousData(recipeData)
         const pageUrl = (pageData.next.href)
-        console.log(pageUrl)
+        // console.log(pageUrl)
         return axios.get(pageUrl)
             .then(pages => pages.data)
             .then(data => {
-                console.log(data['_links'])
+                // console.log(data['_links'])
                 setRecipeData(data['hits'])
                 setPageData(data['_links'])
             })
@@ -97,7 +92,7 @@ function RecipeSearch(props) {
         <div>
             <Container id="searchContainer">
                 <h2>Healthy Recipe Finder</h2>
-                <Form onSubmit={fetchRecipeList} className="mb-3">
+                <Form onSubmit={fetchRecipeList}>
                     <Row className="mb-3">
                         <Col md>
                             <Form.Label>Primary Search</Form.Label>
