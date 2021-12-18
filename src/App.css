@@ -27,6 +27,12 @@
       #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%)
 
 }
+.goTzNP.toggled {
+  
+
+  padding: 10px
+;
+}
 .sc-AjmGg, .goTzNP{
   border-radius: 25px;
   background-image: linear-gradient(to right, 
@@ -39,10 +45,21 @@
   background-image: linear-gradient(to right, 
       #e4afcb 0%, #b8cbb8 0%, #b8cbb8 0%, 
       #e2c58b 30%, #c2ce9c 64%, #7edbdc 100%);
+      padding: 10px;
+}
+.navbar-nav {
+  
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  padding-top: 5px;
+  padding-right: 20px;
+  margin-bottom: 0;
+  list-style: none;
 }
 .sideNav {
   position: fixed;
-  top: 51px;
+  top: 80px;
   bottom: 0;
   left: 0;
   z-index: 1000;
