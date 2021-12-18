@@ -3,7 +3,6 @@ import { Card, Container, Row, Col, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { setRecipeCard } from "../Redux/actions/RecipeCard-action";
-// import { BsInfoSquare } from "react-icons/bs"; // Information Icon
 
 
 
@@ -34,9 +33,7 @@ const DisplayCard = (props) => {
             <Row>
               <Col>
                 <div>
-                  <Button onClick={() => recipeCard(individualRecipe)}>
-                    
-                  </Button>
+                  <Button variant="primary" onClick={() => recipeCard(individualRecipe)}>Details</Button>
                 </div>
               </Col>
             </Row>

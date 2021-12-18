@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Sidebar from './components/SideNavnew'
 import RecipeSearch from './components/RecipeSearch';
@@ -21,23 +21,24 @@ import {
 } from 'react-router-dom';
 
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { apiResponse: "" };
-  }
+function App (props) {
+  
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { apiResponse: "" };
+  // }
 
-  callAPI() {
-    fetch("http://localhost:9000/testAPI")
-      .then(res => res.text())
-      .then(res => this.setState({ apiResponse: res }));
-  }
+  // callAPI() {
+  //   fetch("http://localhost:9000/testAPI")
+  //     .then(res => res.text())
+  //     .then(res => this.setState({ apiResponse: res }));
+  // }
 
-  componentWillMount() {
-    this.callAPI();
-  }
+  // useEffect() {
+  //   callAPI()
+  // }
 
-  render () {
+  
     return (
       <div className="App">
         {/* <p className="App-Intro">{this.state.apiResponse}</p> */}
@@ -47,7 +48,7 @@ class App extends Component {
         <Navbar />{" "}
         <Sidebar />
           <Switch>
-            <Route path="/home">
+            <Route exact path="/">
               <Home/>
             </Route>
             <ProtectedRoute path="/search">
@@ -80,7 +81,7 @@ class App extends Component {
         
       </div>
     );
-  }
+  
 }
 
   export default App;

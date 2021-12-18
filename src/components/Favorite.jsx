@@ -1,25 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Form, Container, Row, Col } from 'react-bootstrap';
 import DisplayCard from './DisplayCard';
 
 function Favorite(props) {
+    console.log ("activated")
 
     const [cookbookData, setCookbookData] = useState ([])
     const [categoryValue, setCategoryValue] = useState ("")
+    const [categoryData, setCategoryData] = useState ("")
+    const [commentData, setCommentData] = useState ("")
 
-    function loadCookbook() {
+    const loadCookbook = () => {
 
-
-        const user_id = localStorage.getItem("UserID");
-        let url = "/favorites/" + user_id;
-        fetch(url)
+        console.log ("activated")
+        // const user_id = localStorage.getItem("UserID");
+        let url = "http://localhost:9000/favorite";
+        fetch(url, {
+            method: "GET",
+            headers: {
+                "Accept": "application/json",
+                "Content-Type": "application/json",
+              },
+        })
             .then(res => res.json())
             .then((data) => {
-                setCookbookData(data.recipe);
-
+                console.log(data)
+                // setCookbookData(data.recipe);
+                // setCommentData(data.commentSection)
+                // setCategoryData(data.category)
 
             });
     }
+
+    useEffect (() => {
+        loadCookbook()
+    },[])
 
     const categoryList = (event) => {
         setCookbookData()
@@ -37,7 +52,7 @@ function Favorite(props) {
                 <Form onSubmit={categoryList} className="mb-3">
                     <Row>
                         <Form.Label>Filter by Category</Form.Label>
-                        <Form.Control value={categoryValue} onchange={handleRequest} type="text" plaaceholder="category" required />
+                        <Form.Control value={categoryValue} onChange={handleRequest} type="text" plaaceholder="category" required />
                     </Row>
                 </Form>
             </Container>

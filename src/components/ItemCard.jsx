@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container, Button, Card, Col, Row } from 'react-bootstrap';
+import { Container, Card, Col, Row } from 'react-bootstrap';
 // import NutritionCard from './NutritionCard';
 // import axios from 'axios';
 
@@ -44,8 +44,8 @@ function ItemCard() {
                                     <Row>
                                         <Col>
                                             <div>
-                                                <Button onClick={(event) => (event)}>
-                                                </Button>
+                                                {/* <Button onClick={(event) => (event)}>
+                                                </Button> */}
                                             </div>
                                         </Col>
                                     </Row>

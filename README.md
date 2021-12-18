@@ -1,70 +1,44 @@
-# Getting Started with Create React App
+# Food For All
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![ScreenShot] ("/recipe-app/src/assets/Screen Shot 2021-12-17 at 11.09.21 AM.png")
 
-## Available Scripts
+Food for All is an application developed in December of 2021.  The purpose behind it is to give people better options for cooking in a way that saves time, money, and space.  The idea is to give users extensive search options to narrow down the results they get when looking for a particular idea.  This concept applies to people trying to follow certain dietary criteria for weight-loss or religious reasons, looking to avoid foods they are allergic to, or simply want to try different types of recipes they normally can't find.  They are plenty of options available to find recipes, we look to make it easier to find recipes that work for you.
 
-In the project directory, you can run:
+## Featured stack
 
-### `npm start`
+    -Node
+    -React
+    -Redux
+    -Passport
+    -Express
+    -Sequelize
+    -PostgreSQL
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Known Issues // Room for Improvement
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  
 
-### `npm test`
+## Scrum Tool
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Jira
 
-### `npm run build`
+## Install
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    npm install (installs all dependencies)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Run
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    npm start
 
-### `npm run eject`
+## Links
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Contributors
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Vivek  (Databases, Navbar, AboutUs)
+- Tim  (Login, Registration, Jira/Repo Setup)
+- Charles Eldridge - (React/Redux, API call GURU, ReadME, Scrum Master)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<a href="https://github.com/Eldridge0831/Food4All-Front/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=Eldridge0831/Food4All-Front" />
+</a>
