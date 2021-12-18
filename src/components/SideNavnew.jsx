@@ -8,7 +8,7 @@ import {
     CDBSidebarMenuItem
   } from 'cdbreact';
   import { NavLink} from 'react-router-dom';
-  
+  import logo from "../assets/logo.jpg";
   
 
 
@@ -54,7 +54,9 @@ function Sidebar  () {
                     padding: "20px 5px"
                   }}
                 >
-                  Sidebar Footer
+                  <img src={logo} alt="logo"  margin-right="20px"  width = "40rem" />
+
+                  Food For All
                 </div>
               </CDBSidebarFooter>
         </CDBSidebar>
