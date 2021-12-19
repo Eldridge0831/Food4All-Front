@@ -9,11 +9,10 @@ function Favorite(props) {
     const [categoryValue, setCategoryValue] = useState("")
     const [categoryData, setCategoryData] = useState("")
     const [commentData, setCommentData] = useState("")
-    let cookbook = ""
+    // let cookbook = ""
 
     const loadCookbook = () => {
 
-        console.log("activated")
         // const user_id = localStorage.getItem("UserID");
         let url = "http://localhost:9000/favorite";
         fetch(url, {
@@ -31,12 +30,14 @@ function Favorite(props) {
             });
     }
 
+
+
     useEffect(() => {
         loadCookbook()
     }, [])
 
+    // retrieving favorites by category
     const categoryList = (event) => {
-        console.log("category selected")
         setCookbookData([])
         let url = "http://localhost:9000/favorite/" + "3" + "/" + categoryValue;
         console.log(url)
@@ -56,7 +57,6 @@ function Favorite(props) {
     }
 
     const handleRequest = (event) => {
-        console.log("request made")
         setCategoryValue(event.target.value)
     }
 
@@ -81,14 +81,20 @@ function Favorite(props) {
             </Container>
             <div className="recipe-container">
                 <Row>
-                    {cookbookData && cookbookData.map((recipe, index) => {
+                    {cookbookData && cookbookData.map((recipe, commentSection, index) => {
                         return (
                             <Col key={index} xs={12} sm={6} md={6} lg={4} xl={3}
                                 className="mb-6">
-                                <CookbookPages index={index} recipe={recipe.recipe} />
+                                <CookbookPages index={index} recipe={recipe.recipe} commentSection={commentSection.commentSection}/>
+                                {/* <CookbookPages index={index} comments={recipe.comments} /> */}
                             </Col>
                         )
                     })}
+                    {/* {cookbookData && cookbookData.map((comments, index) => {
+                        return (
+                            <CookbookPages index={index} comments={comments.comments} />
+                        )
+                    })} */}
                 </Row>
             </div>
         </div>
