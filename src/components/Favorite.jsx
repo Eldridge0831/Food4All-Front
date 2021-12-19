@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Container, Row, Col } from 'react-bootstrap';
-import DisplayCard from './DisplayCard';
+import CookbookPages from './CookbookPages';
 
 function Favorite(props) {
     console.log ("activated")
@@ -9,6 +9,7 @@ function Favorite(props) {
     const [categoryValue, setCategoryValue] = useState ("")
     const [categoryData, setCategoryData] = useState ("")
     const [commentData, setCommentData] = useState ("")
+    let cookbook = ""
 
     const loadCookbook = () => {
 
@@ -24,8 +25,9 @@ function Favorite(props) {
         })
             .then(res => res.json())
             .then((data) => {
-                console.log(data)
-                // setCookbookData(data.recipe);
+                console.log(data);
+                setCookbookData(data)
+            
                 // setCommentData(data.commentSection)
                 // setCategoryData(data.category)
 
@@ -52,7 +54,7 @@ function Favorite(props) {
                 <Form onSubmit={categoryList} className="mb-3">
                     <Row>
                         <Form.Label>Filter by Category</Form.Label>
-                        <Form.Control value={categoryValue} onChange={handleRequest} type="text" plaaceholder="category" required />
+                        <Form.Control value={categoryValue} onChange={handleRequest} type="text" placeholder="category" required />
                     </Row>
                 </Form>
             </Container>
@@ -62,7 +64,7 @@ function Favorite(props) {
                         return (
                             <Col key={index} xs={12} sm={6} md={6} lg={4} xl={3}
                                 className="mb-6">
-                                <DisplayCard index={index} recipe={recipe.recipe} />
+                                <CookbookPages index={index} recipe={recipe.recipe} />
                             </Col>
                         )
                     })}

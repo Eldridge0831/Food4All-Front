@@ -6,24 +6,24 @@ import { setRecipeCard } from "../Redux/actions/RecipeCard-action";
 
 
 
-const DisplayCard = (props) => {
+const CookbookPages = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
-  const individualRecipe = props.recipe;
-  console.log(individualRecipe)
-  // let item = "";
-  // console.log(item)
+  const cookbookItem = props.recipe;
+  console.log(cookbookItem)
+  let item = "";
+  console.log(item)
 
 
-  // Object.keys(individualRecipe).forEach(function(recipe) {
-  //   item = individualRecipe[recipe]
-  //   console.log (item.label)
-  //   }
-  // );
+  Object.keys(cookbookItem).forEach(function(recipe) {
+    item = cookbookItem[recipe]
+    console.log (item.label)
+    }
+  );
   
 
-  const recipeCard = (individualRecipe) => {
-    dispatch(setRecipeCard(individualRecipe));
+  const recipeCard = (item) => {
+    dispatch(setRecipeCard(item));
     history.push('/recipe')
   };
 
@@ -34,17 +34,17 @@ const DisplayCard = (props) => {
         <Card.Img
           className="recipeCard-pic"
           variant="top"
-          // src={item.image}
+          src={item.image}
         />
         <Card.Body>
-          <Card.Title>{individualRecipe.label}</Card.Title>
-          <Card.Text>{individualRecipe.source}</Card.Text>
+          <Card.Title>{item.label}</Card.Title>
+          <Card.Text>{item.source}</Card.Text>
           
           <Container>
             <Row>
               <Col>
                 <div>
-                  <Button variant="primary" onClick={() => recipeCard(individualRecipe)}>Details</Button>
+                  <Button variant="primary" onClick={() => recipeCard(item)}>Details</Button>
                 </div>
               </Col>
             </Row>
@@ -55,4 +55,4 @@ const DisplayCard = (props) => {
   );
 };
 
-export default DisplayCard;
+export default CookbookPages;
