@@ -41,7 +41,7 @@ function RecipeSearch(props) {
         return axios.get(url)
             .then(recipes => recipes.data)
             .then(data => {
-                // console.log(data);
+                console.log(data);
 
                 if (data['hits'].length === 0) {
                     console.log(data['hits'])
