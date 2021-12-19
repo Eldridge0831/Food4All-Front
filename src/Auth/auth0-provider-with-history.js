@@ -17,7 +17,11 @@ const Auth0ProviderWithHistory = ({ children }) => {
 
   // Give access to auth0 values to any child component in app
   return (
+
+    
+
     <Auth0Provider domain={domain} clientId={clientId} redirectUri="https://food4all-front.herokuapp.com" onRedirectCallback="https://food4all-front.herokuapp.com" audience={audience}>
+
       {children}
     </Auth0Provider>
   );

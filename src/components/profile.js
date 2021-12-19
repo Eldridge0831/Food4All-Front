@@ -14,7 +14,7 @@ const Profile = () => {
 
   useEffect(() => {
     (async function () {
-      const urlString = "https://backend.food4everyone.com/users/" + email; //TODO. Get correct url
+      const urlString = " https://food4all-back.herokuapp.com/users" + email; //TODO. Get correct url
       await fetch(urlString, {
         method: "GET",
         headers: {
@@ -41,7 +41,7 @@ const Profile = () => {
             UserName.innerHTML = "Username: <h5>" + response[0].userName + "</h5>";
             
           } else {
-            document.location.replace("https://localhost:3006/registration");
+           // document.location.replace("https://localhost:3006/registration");
           }
         });
     })();
