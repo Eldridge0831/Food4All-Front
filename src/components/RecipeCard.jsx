@@ -10,8 +10,8 @@ import { FaMinusCircle } from "react-icons/fa";
 function RecipeCard() {
 
     const [disableCookbook, setDisableCookbook] = useState(false);
-    const [disableUpdate, setDisableUpdate] = useState(true);
-    const [disableDelete, setDisableDelete] = useState(true);
+    const [disableUpdate, setDisableUpdate] = useState(false);
+    const [disableDelete, setDisableDelete] = useState(false);
     const [comments, setComments] = useState("");
     const [categoryValue, setCategoryValue] = useState("none");
 
@@ -45,38 +45,38 @@ function RecipeCard() {
             })
     }
 
-    // function updateCookbook() {
-    //     let user_Id = localStorage.getItem("UserID");
-    //     let url = "user/modify/" + user_Id;
+    function updateCookbook() {
+        // let user_Id = localStorage.getItem("UserID");
+        let url = "favorite/modify/" + recipe.label;
+        console.log(url)
+        fetch("http://localhost:9000/" + url, {
+            method: "PUT",
+            headers: {
+                // Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                user_id: "4",
+                category: categoryValue,
+                recipe: singleRecipeData,
+                commentSection: comments,
+                recipe_id: recipe.label
 
-    //     fetch("http://localhost:" + url, {
-    //         method: "PUT",
-    //         headers: {
-    //             // Accept: "application/json",
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             id: user_Name,
-    //             category: categoryValue,
-    //             recipe: singleRecipeData,
-    //             commentSection: comments,
-    //             recipe_id:  recipe.label
-
-    //         }),
-    //     })
-    //         .then(res => (res.json()))
-    //         .then(res => {
-    //             alert("Succesfully Updated Recipe")
-    //         })
+            }),
+        })
+            .then(res => (res.json()))
+            .then(res => {
+                alert("Succesfully Updated Recipe")
+            })
 
 
-    // }
+    }
 
     function deleteCookbook() {
         setDisableDelete(true)
         console.log(recipe.label)
         // const user_id = localStorage.getItem("UserName");
-        fetch("http://localhost:9000/favorite/:recipe_id", {
+        fetch("http://localhost:9000/favorite/" + recipe.label, {
             method: "DELETE",
             headers: {
                 // Accept: "application/json",
@@ -84,15 +84,20 @@ function RecipeCard() {
             },
             body: JSON.stringify({
                 recipe_id: recipe.label
+               
                 // user_id: localStorage.getItem("UserName"),
             }),
+            
         })
+        
             .then(res => res.json())
             .then(res => {
                 if (res.status === "Recipe deleted!") {
                     alert("Recipe deleted!");
+
                 }
             })
+            console.log(recipe.label, "#2")
     }
 
     const handleChange = (event) => {
@@ -190,7 +195,7 @@ function RecipeCard() {
                             </button>
                         </Col>
                         <Col md="2">
-                            <button disabled={disableUpdate} onClick={() => setDisableUpdate(false)}>
+                            <button disabled={disableUpdate} onClick={() => updateCookbook()}>
                                 <FaRedoAlt size="28" />
                             </button>
                         </Col>
