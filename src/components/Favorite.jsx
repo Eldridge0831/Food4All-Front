@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import { Form, Container, Row, Col } from 'react-bootstrap';
+import { Form, Container, Row, Col, ListGroup, Button } from 'react-bootstrap';
 import CookbookPages from './CookbookPages';
 
 function Favorite(props) {
-    console.log ("activated")
+    console.log("activated")
 
-    const [cookbookData, setCookbookData] = useState ([])
-    const [categoryValue, setCategoryValue] = useState ("")
-    const [categoryData, setCategoryData] = useState ("")
-    const [commentData, setCommentData] = useState ("")
+    const [cookbookData, setCookbookData] = useState([])
+    const [categoryValue, setCategoryValue] = useState("")
+    const [categoryData, setCategoryData] = useState("")
+    const [commentData, setCommentData] = useState("")
     let cookbook = ""
 
     const loadCookbook = () => {
 
-        console.log ("activated")
+        console.log("activated")
         // const user_id = localStorage.getItem("UserID");
         let url = "http://localhost:9000/favorite";
         fetch(url, {
@@ -21,25 +21,38 @@ function Favorite(props) {
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json",
-              },
+            },
         })
             .then(res => res.json())
             .then((data) => {
                 console.log(data);
                 setCookbookData(data)
-            
-                // setCommentData(data.commentSection)
-                // setCategoryData(data.category)
 
             });
     }
 
-    useEffect (() => {
+    useEffect(() => {
         loadCookbook()
-    },[])
+    }, [])
 
     const categoryList = (event) => {
-        setCookbookData()
+        console.log("category selected")
+        setCookbookData([])
+        let url = "http://localhost:9000/favorite/" + "3" + "/" + categoryValue;
+        console.log(url)
+        fetch(url, {        
+            method: "GET",
+            headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json",
+            },
+        })
+            .then(res => res.json())
+            .then((data) => {
+            console.log(data);
+            setCookbookData(data)
+
+        });
     }
 
     const handleRequest = (event) => {
@@ -51,10 +64,18 @@ function Favorite(props) {
         <div>
             <Container>
                 <h2>Your Cook Book</h2>
-                <Form onSubmit={categoryList} className="mb-3">
+                <Form className="mb-3">
                     <Row>
                         <Form.Label>Filter by Category</Form.Label>
                         <Form.Control value={categoryValue} onChange={handleRequest} type="text" placeholder="category" required />
+                        <Button className="btn btn-dark mx-5" onClick={() => categoryList()}>Search</Button>
+                    </Row>
+                    <Row>
+                        <ListGroup>
+                            {categoryData && categoryData.map((category, index) => {
+                                return <ListGroup.Item key={index}>{category}</ListGroup.Item>;
+                            })}
+                        </ListGroup>
                     </Row>
                 </Form>
             </Container>

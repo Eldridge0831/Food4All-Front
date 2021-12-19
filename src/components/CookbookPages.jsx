@@ -12,16 +12,12 @@ const CookbookPages = (props) => {
   const cookbookItem = props.recipe;
   console.log(cookbookItem)
   let item = "";
-  console.log(item)
-
 
   Object.keys(cookbookItem).forEach(function(recipe) {
     item = cookbookItem[recipe]
-    console.log (item.label)
     }
   );
   
-
   const recipeCard = (item) => {
     dispatch(setRecipeCard(item));
     history.push('/recipe')
