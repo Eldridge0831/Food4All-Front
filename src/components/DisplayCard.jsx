@@ -10,16 +10,7 @@ const DisplayCard = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const individualRecipe = props.recipe;
-  console.log(individualRecipe)
-  // let item = "";
-  // console.log(item)
-
-
-  // Object.keys(individualRecipe).forEach(function(recipe) {
-  //   item = individualRecipe[recipe]
-  //   console.log (item.label)
-  //   }
-  // );
+  // console.log(individualRecipe)
   
 
   const recipeCard = (individualRecipe) => {
@@ -34,7 +25,7 @@ const DisplayCard = (props) => {
         <Card.Img
           className="recipeCard-pic"
           variant="top"
-          // src={item.image}
+          src={individualRecipe.image}
         />
         <Card.Body>
           <Card.Title>{individualRecipe.label}</Card.Title>
