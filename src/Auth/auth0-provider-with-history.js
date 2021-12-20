@@ -20,7 +20,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
 
     
 
-    <Auth0Provider domain={domain} clientId={clientId} redirectUri="https://food4all-front.herokuapp.com" onRedirectCallback="https://food4all-front.herokuapp.com" audience={audience}>
+    <Auth0Provider domain={domain} clientId={clientId} redirectUri={window.location.origin} onRedirectCallback={onRedirectCallback} audience={audience}>
 
       {children}
     </Auth0Provider>
