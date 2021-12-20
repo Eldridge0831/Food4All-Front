@@ -48,16 +48,10 @@ function Sidebar  () {
           </CDBSidebarContent>
           
           <CDBSidebarFooter style={{ textAlign: "center" }}>
-                <div
-                  className="sidebar-btn-wrapper"
-                  style={{
-                    padding: "20px 5px"
-                  }}
-                >
-                  <img src={logo} alt="logo"  id="sideNavLogo"  width = "40rem" />
+                
 
                   Food For All
-                </div>
+                
               </CDBSidebarFooter>
         </CDBSidebar>
         </div>
