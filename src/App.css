@@ -105,10 +105,7 @@
   margin-left: 15px;
 }
 .navbar {
-  
- 
-
-  overflow-x: hidden;
+   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   background-image: linear-gradient(
     to right,
@@ -120,6 +117,9 @@
     #7edbdc 100%
   );
   border-right: 1px solid #eee;
+}
+#navLogo{
+  border-radius:20px
 }
 
 .App {
