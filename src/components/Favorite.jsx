@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form, Container, Row, Col, Button } from 'react-bootstrap';
 import CookbookPages from './CookbookPages';
-import {changeButtons} from '../Redux/actions/ButtonChange-action'
 import {useDispatch} from 'react-redux';
 
 function Favorite(props) {
@@ -30,7 +29,7 @@ function Favorite(props) {
             .then((data) => {
                 console.log(data[2].commentSection);
                 setCookbookData(data)
-                dispatch(changeButtons(cookbookItem));
+                // dispatch(changeButtons(cookbookItem));
 
             });
     }
@@ -75,13 +74,6 @@ function Favorite(props) {
                         <Form.Control value={categoryValue} onChange={handleRequest} type="text" placeholder="category" required />
                         <Button className="btn btn-dark mx-5" onClick={() => categoryList()}>Search</Button>
                     </Row>
-                    {/* <Row>
-                        <ListGroup>
-                            {categoryData && categoryData.map((category, index) => {
-                                return <ListGroup.Item key={index}>{category}</ListGroup.Item>;
-                            })}
-                        </ListGroup>
-                    </Row> */}
                 </Form>
             </Container>
             <div className="recipe-container">

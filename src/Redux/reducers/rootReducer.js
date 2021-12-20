@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import { singleItemReducer } from "./ItemCardReducer";
 import { singleRecipeReducer } from "./RecipeCardReducer";
 import { commentsReducer } from "./CommentPushReducer";
-import { buttonReducer } from "./ButtonChangeReducer";
+import { cookbookCardReducer } from "./CookbookCardReducer";
 
 
 
@@ -10,7 +10,7 @@ const rootReducer = combineReducers({
     singleItemReducer,
     singleRecipeReducer,
     commentsReducer,
-    buttonReducer,
+    cookbookCardReducer,
 })
 
 export default rootReducer;
