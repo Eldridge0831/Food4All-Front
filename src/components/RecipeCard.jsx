@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Card, Col, Row, Tab, Tabs, ListGroup, Button, FormControl, Form } from 'react-bootstrap';
@@ -10,18 +10,31 @@ import { FaMinusCircle } from "react-icons/fa";
 function RecipeCard() {
 
     const [disableCookbook, setDisableCookbook] = useState(false);
-    const [disableUpdate, setDisableUpdate] = useState(false);
-    const [disableDelete, setDisableDelete] = useState(false);
+    const [disableUpdate, setDisableUpdate] = useState(true);
+    const [disableDelete, setDisableDelete] = useState(true);
     const [comments, setComments] = useState("");
     const [categoryValue, setCategoryValue] = useState("none");
 
     const singleRecipeData = useSelector((state) => state.singleRecipeReducer);
+    const commentsData = useSelector((state) => state.commentsReducer);
+    const buttonPosition = useSelector((state) => state.buttonReducer);
+    console.log(buttonPosition);
     const recipe = singleRecipeData[0]
+    
+    
+        // if (buttonPosition === 'yes') {
+        //     setDisableCookbook(true)
+        //     setDisableDelete(false)
+        //     setDisableUpdate(false)
+        //     console.log(buttonPosition)
+        // };
+
 
     function postCookbook() {
         console.log(categoryValue)
         setDisableCookbook(true)
         setDisableDelete(false)
+        setDisableUpdate(false)
         // const sessionUserName = localStorage.getItem("UserId")
         fetch("http://localhost:9000/favorite", {
             method: "POST",
@@ -56,7 +69,7 @@ function RecipeCard() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                user_id: "4",
+                user_id: "3",
                 category: categoryValue,
                 recipe: singleRecipeData,
                 commentSection: comments,
@@ -85,9 +98,7 @@ function RecipeCard() {
             body: JSON.stringify({
                 recipe_id: recipe.label
                
-                // user_id: localStorage.getItem("UserName"),
             }),
-            
         })
         
             .then(res => res.json())
@@ -173,10 +184,13 @@ function RecipeCard() {
                         </Tab>
                         <Tab eventKey="comments" title="Comments">
                             <Row>
-                                <Col md="8">
+                                <Col md="6">
                                     <InputGroup>
                                         <FormControl as="textarea" rows="5" value={comments} onChange={handleChange} />
                                     </InputGroup>
+                                </Col>
+                                <Col md="6">
+                                    <Card.Text>{commentsData}</Card.Text>
                                 </Col>
                             </Row>
                         </Tab>
