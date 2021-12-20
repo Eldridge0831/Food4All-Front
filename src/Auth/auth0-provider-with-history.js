@@ -8,7 +8,7 @@ const Auth0ProviderWithHistory = ({ children }) => {
   const history = useHistory();
   const domain = "dev-oalrznsx.us.auth0.com"; 
   const clientId ="54S0q4qoMvZZP0Eibr6GLG7mEEB0MD8l";  //passed as props to provider below
-  const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
+  const audience = "https://food4all-back.herokuapp.com/";
 
   //Redirect to Page when user logs in
   const onRedirectCallback = (appState) => {
