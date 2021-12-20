@@ -48,7 +48,7 @@ function App (props) {
         <Navbar />{" "}
         
           <Switch>
-            <Route exact path="/home">
+            <Route exact path="/">
               <Home/>
             </Route>
             <Route path="/search">
