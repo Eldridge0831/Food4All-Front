@@ -10,6 +10,7 @@ import Aboutus from './components/Aboutus';
 import Page404 from './components/Page404';
 import RecipeCard from './components/RecipeCard';
 import ItemCard from './components/ItemCard';
+import CookbookCard from './components/CookbookCard';
 import ProtectedRoute from './Auth/protectedRoute';
 import Auth0ProviderWithHistory from "./Auth/auth0-provider-with-history";
 import './App.css';
@@ -71,6 +72,9 @@ function App (props) {
             </Route>
             <Route path="/solo">
               <ItemCard/>
+            </Route>
+            <Route path="/myrecipe">
+              <CookbookCard/>
             </Route>
             <ProtectedRoute path="/profile">
               <Profile/>

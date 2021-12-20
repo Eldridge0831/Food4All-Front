@@ -2,9 +2,9 @@ import React from "react";
 import { Card, Container, Row, Col, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { setRecipeCard } from "../Redux/actions/RecipeCard-action";
+// import { setRecipeCard } from "../Redux/actions/RecipeCard-action";
 import { setComments } from "../Redux/actions/CommentPush-action";
-import { changeButtons } from "../Redux/actions/ButtonChange-action";
+import { setCookbookCard } from "../Redux/actions/CookbookCard-action";
 
 
 
@@ -23,11 +23,10 @@ const CookbookPages = (props) => {
     }
   );
   
-  const recipeCard = (item) => {
-    dispatch(setRecipeCard(item));
+  const favoriteCard = (item) => {
+    dispatch(setCookbookCard(item));
     dispatch(setComments(cookbookComments));
-    dispatch(changeButtons("yes"));
-    history.push('/recipe')
+    history.push('/myrecipe')
   };
 
   return (
@@ -47,7 +46,7 @@ const CookbookPages = (props) => {
             <Row>
               <Col>
                 <div>
-                  <Button variant="primary" onClick={() => recipeCard(item)}>Details</Button>
+                  <Button variant="primary" onClick={() => favoriteCard(item)}>Details</Button>
                 </div>
               </Col>
             </Row>
