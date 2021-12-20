@@ -8,7 +8,7 @@ import Tim from "../assets/tim.jpg";
 
 function Aboutus() {
   return (
-    <div className="drink-container d-flex align-items-center justify-content-center mt-5">
+    <div className= "about-us-container d-flex align-items-center justify-content-center mt-5">
       <Card  border="primary" style={{ maxWidth: '20rem' }}>
         <Card.Img variant="top" src={Vivek} />
         <Card.Body>
@@ -95,62 +95,6 @@ function Aboutus() {
           </ListGroupItem>
         </ListGroup>
       </Card>
-
-          {/* <div className="column">
-            <div className="card">
-              <div className="container" styles="text-align:center">
-                <img
-                  className="card-img-top w-100 d-block"
-                  alt="Profile"
-                  src={Charles}
-                ></img>
-                <h2>Charles Eldrigde</h2>
-                <p className="title">Web Developer</p>
-                <a href="mailto: " target="_blank" rel="noreferrer">
-                  <EnvelopeFill size={40} className="p-1" />
-                </a>
-                <a
-                  href="https://github.com/Eldridge0831"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Github size={40} className="p-1" />
-                </a>
-                <a href="" target="_blank" rel="noreferrer">
-                  <Linkedin size={36} className="p-1" />
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="column">
-            <div className="card">
-              <div className="container" styles="text-align:center">
-                <img
-                  className="card-img-top w-100 d-block"
-                  alt="Profile"
-                  src={Tim}
-                ></img>
-                <h2>Tim Johns</h2>
-                <p className="title">Web Developer</p>
-                <a href="mailto: " target="_blank" rel="noreferrer">
-                  <EnvelopeFill size={40} className="p-1" />
-                </a>
-                <a
-                  href="https://github.com/tjohns823"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <Github size={40} className="p-1" />
-                </a>
-                <a href="" target="_blank" rel="noreferrer">
-                  <Linkedin size={36} className="p-1" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 }
