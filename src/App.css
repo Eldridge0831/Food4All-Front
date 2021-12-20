@@ -3,7 +3,7 @@
 .ina-DuF {
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgb(63, 60, 60);
-  margin: 10px;
+  margin: 5px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -125,11 +125,7 @@
 .NutritionData{
   margin-top:20px;
 }
-.btn{
-  margin-left: 10px;
-  
-  
-}
+
 
 .App {
   text-align: center;
@@ -152,14 +148,14 @@
   align-items: center;
   justify-content: center;
   width: 60%;
-  padding-top: 20px;
+  padding-top: 40px;
   margin: top 20px;
   margin-bottom: 20px;
 }
 .row {
   flex-direction: row;
   align-items: center;
-  min-height: fit-content;
+  
 }
 
 .App-header {
