@@ -12,7 +12,7 @@ return  (
   <div>
     <Navbar collapseOnSelect expand="sm" className="nav-background"  variant="dark" >
       <Navbar.Brand href="/home" className="ms-5">
-        <img src={logo} alt="logo"width="30%" height="30%" class="d-inline-block align-top"/>
+        <img src={logo} alt="logo" id="navLogo" width="30%" height="30%"  class="d-inline-block align-top"/>
       </Navbar.Brand>
       <Container>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

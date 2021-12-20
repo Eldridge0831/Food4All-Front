@@ -5,9 +5,9 @@ import "./home.css"
 function Home (props) {
  
     return (
-        <div className = "homePage">
+        <div className = "background-photo">
         <div className="container text-center">
-        <img src={logo} alt="Logo" width = "600rem" />
+        
           
          
         </div>
