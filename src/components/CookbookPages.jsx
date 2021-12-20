@@ -10,18 +10,16 @@ const CookbookPages = (props) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const cookbookItem = props.recipe;
+  const cookbookComments = props.commentSection;
   console.log(cookbookItem)
+  console.log(cookbookComments)
   let item = "";
-  console.log(item)
-
 
   Object.keys(cookbookItem).forEach(function(recipe) {
     item = cookbookItem[recipe]
-    console.log (item.label)
     }
   );
   
-
   const recipeCard = (item) => {
     dispatch(setRecipeCard(item));
     history.push('/recipe')
