@@ -104,14 +104,10 @@
 .search {
   margin-left: 15px;
 }
-.sideNav {
-  position: fixed;
-  top: 80px;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  display: block;
-  padding: 20px;
+.navbar {
+  
+ 
+
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   background-image: linear-gradient(

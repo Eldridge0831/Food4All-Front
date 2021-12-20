@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import Sidebar from './components/SideNavnew'
+
 import RecipeSearch from './components/RecipeSearch';
 import NutritionData from './components/NutritionData';
 import Home from './components/Home';
@@ -46,14 +46,14 @@ function App (props) {
         <Router>
         <Auth0ProviderWithHistory>
         <Navbar />{" "}
-        <Sidebar />
+        
           <Switch>
             <Route exact path="/">
               <Home/>
             </Route>
-            <ProtectedRoute path="/search">
+            <Route path="/search">
               <RecipeSearch/>
-            </ProtectedRoute>
+            </Route>
             <ProtectedRoute path="/favorite">
               <Favorite/>
             </ProtectedRoute>
