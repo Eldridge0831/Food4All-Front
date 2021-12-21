@@ -33,7 +33,8 @@ return  (
             <Link to="/aboutus" style={{ textDecoration: "none" }} className="nav-link text-black">
               About Us
             </Link>
-            <AuthNav />
+            
+            <AuthNav /> {/*Where the AuthNav will render in Navbar*/}
         
           </Nav>
         </Navbar.Collapse>

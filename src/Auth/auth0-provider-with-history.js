@@ -15,14 +15,9 @@ const Auth0ProviderWithHistory = ({ children }) => {
     history.push(appState?.returnTo || window.location.pathname);
   };
 
-  // Give access to auth0 values to any child component in app
+  // Give access to auth0 values to any child component in app. Configured Auth0Provider
   return (
-
-    
-
-
     <Auth0Provider domain={domain} clientId={clientId} redirectUri={window.location.origin} onRedirectCallback={onRedirectCallback} audience={audience}>
-
 
       {children}
     </Auth0Provider>

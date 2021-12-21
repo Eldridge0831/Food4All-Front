@@ -6,15 +6,15 @@ import { Loading } from '../components';
 import { useEffect } from "react";
 
 
-
+//Get email from data returned from Auth0
 
 const Profile = () => {
   const { user } = useAuth0();
   const { email } = user;
-
+  //Runs once after page lods
   useEffect(() => {
     (async function () {
-      const urlString = "https://cors-anywhere.herokuapp.com/https://food4all-back.herokuapp.com/users" + email; //TODO. Get correct url
+      const urlString = "https://food4all-back.herokuapp.com/users" + email; //TODO. Get correct url
       await fetch(urlString, {
         method: "GET",
         headers: {
@@ -24,6 +24,7 @@ const Profile = () => {
       })
         .then((response) => response.json())
         .then((response) => {
+          //If response is not empty, the form will pre-populate
           console.log(response.status);
           if (response.status === 200) {
             console.log("The response is: ", response);
@@ -33,7 +34,7 @@ const Profile = () => {
             const Email = document.getElementById("userEmail");
             const UserName = document.getElementById("userUserName");
             
-
+            //Default values fill in 
             Image.innerHTML = "<img src={`data:image/png;base64,${Buffer.from(this.state.data).toString('base64')}`} />";
             FirstName.innerHTML = "First Name: <h5>" + response[0].firstName + "</h5>";
             LastName.innerHTML = "Last Name: <h5>" + response[0].lastName + "</h5>";
