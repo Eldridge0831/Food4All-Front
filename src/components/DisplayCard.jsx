@@ -21,7 +21,7 @@ const DisplayCard = (props) => {
   return (
     <div className="Recipe-card-container rc-5">
       
-      <Card style={{ width: "10rem" }}>
+      <Card style={{ width: "12rem" }}>
         <Card.Img
           className="recipeCard-pic"
           variant="top"

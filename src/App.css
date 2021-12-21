@@ -102,8 +102,8 @@
   font-size: calc(1.375rem + 1.5vw);
   padding-top: 20px;
 }
-.search {
-  margin-left: 15px;
+.nutritionBtn {
+  margin-left: .5rem;
 }
 .navbar {
    overflow-x: hidden;
@@ -123,11 +123,16 @@
   border-radius:20px
 }
 .NutritionData{
-  margin-top:20px;
+  margin-top:2rem;
+  margin-bottom: 2rem;
 }
 .rc-5{
   height: 25rem;
  
+}
+.lp-1, .np-1, .sb-1, .rb-1{
+  margin-top:4rem;
+  margin-right:1rem;
 }
 .card-title.h5 {
 font-size: .9rem;

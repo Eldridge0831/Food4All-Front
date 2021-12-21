@@ -207,12 +207,12 @@ function RecipeSearch(props) {
                         </Col>
                     </Row>
                     <div>
-                    <Button className="mx-5" variant="primary" type="submit">Search</Button>
-                    <Button className="mx-5" variant="danger" type="reset">Reset</Button>
+                    <Button className="mx-5 sb-1" variant="primary" type="submit">Search</Button>
+                    <Button className="mx-5 rb-1" variant="danger" type="reset">Reset</Button>
                     </div>
                 </Form>
             </Container>
-            <div className="recipe-container" >
+            <div className="recipe-container " >
                 <Row>
                     {recipeData && recipeData.map((recipe, index) => {
                         return (
@@ -226,8 +226,8 @@ function RecipeSearch(props) {
                 </Row>
             </div>
             <div>
-                <Button className="btn btn-dark mx-5" onClick={() => previousPage()}>Last Page</Button>
-                <Button className="btn btn-dark mx-5" onClick={() => nextPage()}>Next Page</Button>
+                <Button className="btn btn-primary mx-5 lp-1" onClick={() => previousPage()}>Last Page</Button>
+                <Button className="btn btn-success mx-5 np-1" onClick={() => nextPage()}>Next Page</Button>
             </div>
         </div>
     );
