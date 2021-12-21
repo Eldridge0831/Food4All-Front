@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 
 function NutritionData (props) {
     const [searchValue, setSearchValue] = useState("");
-    const [nutritionData, setNutritionData] = useState([])
+    // const [nutritionData, setNutritionData] = useState([])
     const [alternateOptions, setAlternateOptions] = useState([]);
     const history = useHistory ();
 
@@ -15,7 +15,7 @@ function NutritionData (props) {
     // API call
     function fetchNutrition(event) {
         event.preventDefault()
-        console.log("api called");
+        // console.log("api called");
 
         const request = new XMLHttpRequest();
         request.onreadystatechange = function () {
@@ -59,9 +59,9 @@ function NutritionData (props) {
     return (
         <div>
             <div className="NutritionData">
-                <h1>Food Nutrition & Alternatives</h1>
+                <h1>Food Nutrition Look-Up</h1>
                 <input value={searchValue} onChange={(event) => searchRequest(event)} type="text" placeholder="Your Item" />
-                <Button type="submit" id="search" onClick={(event) => fetchNutrition(event)}>Search</Button>
+                <Button type="submit" className="nutritionBtn" onClick={(event) => fetchNutrition(event)}>Search</Button>
             </div>
             <div className="recipe-container">
                 <Row>

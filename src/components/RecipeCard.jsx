@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Card, Col, Row, Tab, Tabs, ListGroup, Button, FormControl, Form } from 'react-bootstrap';
@@ -6,6 +6,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 import { FaBookOpen } from "react-icons/fa"; //for favoriting recipes
 import { FaRedoAlt } from "react-icons/fa";
 import { FaMinusCircle } from "react-icons/fa";
+// import { ReactDOM } from 'react-dom';
 
 function RecipeCard() {
 
@@ -14,43 +15,48 @@ function RecipeCard() {
     const [disableDelete, setDisableDelete] = useState(true);
     const [comments, setComments] = useState("");
     const [categoryValue, setCategoryValue] = useState("none");
-
+    const [error, setError] = useState("")
     const singleRecipeData = useSelector((state) => state.singleRecipeReducer);
     const recipe = singleRecipeData[0]
 
 
     function postCookbook() {
-        console.log(categoryValue)
-        setDisableCookbook(true)
-        setDisableDelete(false)
-        setDisableUpdate(false)
-        // const sessionUserName = localStorage.getItem("UserId")
-        fetch("http://localhost:9000/favorite", {
-            method: "POST",
-            headers: {
-                // Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                user_id: "3",
-                category: categoryValue,
-                recipe: singleRecipeData,
-                commentSection: comments,
-                recipe_id: recipe.label
-            }),
-        })
-            .then(res => (res.json()))
-            .then(res => {
-                if (res.status === "Recipe added!") {
-                    alert("Recipe added!");
-                }
+        setError("")
+        // const user_id = localStorage.getItem("UserName")
+        const user_id = "4"
+
+        if (user_id !== "") {
+            // console.log(user_id)
+            fetch("http://localhost:9000/favorite", {
+                method: "POST",
+                headers: {
+                    // Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    user_id: "4",
+                    category: categoryValue,
+                    recipe: singleRecipeData,
+                    commentSection: comments,
+                    recipe_id: recipe.label
+                }),
             })
+                .then(res => (res.json()))
+                .then(res => {
+                    alert("Recipe added!")
+                    setDisableCookbook(true)
+                    setDisableDelete(false)
+                    setDisableUpdate(false)
+                })
+        } else {
+            setError("You need to log-in or register before adding to your Cookbook.")
+        }
     }
 
     function updateCookbook() {
-        // let user_Id = localStorage.getItem("UserID");
+        // const user_Id = localStorage.getItem("UserName");
         let url = "favorite/modify/" + recipe.label;
-        console.log(url)
+        // console.log(url)
         fetch("http://localhost:9000/" + url, {
             method: "PUT",
             headers: {
@@ -58,7 +64,7 @@ function RecipeCard() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                user_id: "3",
+                user_id: "4",
                 category: categoryValue,
                 recipe: singleRecipeData,
                 commentSection: comments,
@@ -74,7 +80,7 @@ function RecipeCard() {
 
     function deleteCookbook() {
         setDisableDelete(true)
-        console.log(recipe.label)
+        // console.log(recipe.label)
         // const user_id = localStorage.getItem("UserName");
         fetch("http://localhost:9000/favorite/" + recipe.label, {
             method: "DELETE",
@@ -84,30 +90,29 @@ function RecipeCard() {
             },
             body: JSON.stringify({
                 recipe_id: recipe.label
-               
+
             }),
         })
-        
+
             .then(res => res.json())
             .then(res => {
-                    alert("Recipe deleted!")
+                alert("Recipe deleted!")
             })
-            console.log(recipe.label, "#2")
     }
 
     const handleChange = (event) => {
         setComments(event.target.value)
-        console.log(comments)
     }
 
     const handleRequest = (event) => {
-        console.log("request made")
+        // console.log("request made")
         setCategoryValue(event.target.value)
     }
 
 
     // Detailed recipe card
     return (
+
         <div className="drink-container d-flex align-items-center justify-content-center mt-5">
             <Card border="primary" style={{ maxWidth: '50rem' }}>
 
@@ -144,26 +149,26 @@ function RecipeCard() {
                                 {/* {Object.entries(nutrition.CA).forEach(([key, value]) => {
                                 console.log(`${key} ${value}`);
                             })} */}
-                            <Row>
-                            <Card.Text>Calories per Serving: {Math.round(recipe.calories / recipe.yield)}</Card.Text>
-                            <Col md="6">
-                                
-                                <Card.Text>{recipe.totalDaily.FAT.label} {Math.round(recipe.totalDaily.FAT.quantity / recipe.yield)}{recipe.totalDaily.FAT.unit}</Card.Text>
-                                <Card.Text>{recipe.totalDaily.FASAT.label} {Math.round(recipe.totalDaily.FASAT.quantity / recipe.yield)}{recipe.totalDaily.FASAT.unit}</Card.Text>
-                                <Card.Text>{recipe.totalDaily.CHOLE.label} {Math.round(recipe.totalDaily.CHOLE.quantity / recipe.yield)}{recipe.totalDaily.CHOLE.unit}</Card.Text>
-                                <Card.Text>{recipe.totalDaily.NA.label} {Math.round(recipe.totalDaily.NA.quantity / recipe.yield)}{recipe.totalDaily.NA.unit}</Card.Text>
-                                <Card.Text>{recipe.totalDaily.CHOCDF.label} {Math.round(recipe.totalDaily.CHOCDF.quantity / recipe.yield)}{recipe.totalDaily.CHOCDF.unit}</Card.Text>
-                                <Card.Text>{recipe.totalDaily.FIBTG.label} {Math.round(recipe.totalDaily.FIBTG.quantity / recipe.yield)}{recipe.totalDaily.FIBTG.unit}</Card.Text>
-                                </Col>
-                                <Col md="6">
-                                <Card.Text>{recipe.totalDaily.PROCNT.label} {Math.round(recipe.totalDaily.PROCNT.quantity / recipe.yield)}{recipe.totalDaily.PROCNT.unit}</Card.Text>
-                                <Card.Text>{recipe.totalDaily.VITD.label} {Math.round(recipe.totalDaily.VITD.quantity / recipe.yield)}{recipe.totalDaily.VITD.unit}</Card.Text>
-                                <Card.Text>{recipe.totalDaily.CA.label} {Math.round(recipe.totalDaily.CA.quantity / recipe.yield)}{recipe.totalDaily.CA.unit}</Card.Text>
-                                <Card.Text>{recipe.totalDaily.FE.label} {Math.round(recipe.totalDaily.FE.quantity / recipe.yield)}{recipe.totalDaily.FE.unit}</Card.Text>
-                                <Card.Text>{recipe.totalDaily.K.label} {Math.round(recipe.totalDaily.K.quantity / recipe.yield)}{recipe.totalDaily.K.unit}</Card.Text>
-                                <Card.Text>{recipe.totalDaily.ZN.label} {Math.round(recipe.totalDaily.ZN.quantity / recipe.yield)}{recipe.totalDaily.ZN.unit}</Card.Text>
-                            </Col>
-                            </Row>
+                                <Row>
+                                    <Card.Text>Calories per Serving: {Math.round(recipe.calories / recipe.yield)}</Card.Text>
+                                    <Col md="6">
+
+                                        <Card.Text>{recipe.totalDaily.FAT.label} {Math.round(recipe.totalDaily.FAT.quantity / recipe.yield)}{recipe.totalDaily.FAT.unit}</Card.Text>
+                                        <Card.Text>{recipe.totalDaily.FASAT.label} {Math.round(recipe.totalDaily.FASAT.quantity / recipe.yield)}{recipe.totalDaily.FASAT.unit}</Card.Text>
+                                        <Card.Text>{recipe.totalDaily.CHOLE.label} {Math.round(recipe.totalDaily.CHOLE.quantity / recipe.yield)}{recipe.totalDaily.CHOLE.unit}</Card.Text>
+                                        <Card.Text>{recipe.totalDaily.NA.label} {Math.round(recipe.totalDaily.NA.quantity / recipe.yield)}{recipe.totalDaily.NA.unit}</Card.Text>
+                                        <Card.Text>{recipe.totalDaily.CHOCDF.label} {Math.round(recipe.totalDaily.CHOCDF.quantity / recipe.yield)}{recipe.totalDaily.CHOCDF.unit}</Card.Text>
+                                        <Card.Text>{recipe.totalDaily.FIBTG.label} {Math.round(recipe.totalDaily.FIBTG.quantity / recipe.yield)}{recipe.totalDaily.FIBTG.unit}</Card.Text>
+                                    </Col>
+                                    <Col md="6">
+                                        <Card.Text>{recipe.totalDaily.PROCNT.label} {Math.round(recipe.totalDaily.PROCNT.quantity / recipe.yield)}{recipe.totalDaily.PROCNT.unit}</Card.Text>
+                                        <Card.Text>{recipe.totalDaily.VITD.label} {Math.round(recipe.totalDaily.VITD.quantity / recipe.yield)}{recipe.totalDaily.VITD.unit}</Card.Text>
+                                        <Card.Text>{recipe.totalDaily.CA.label} {Math.round(recipe.totalDaily.CA.quantity / recipe.yield)}{recipe.totalDaily.CA.unit}</Card.Text>
+                                        <Card.Text>{recipe.totalDaily.FE.label} {Math.round(recipe.totalDaily.FE.quantity / recipe.yield)}{recipe.totalDaily.FE.unit}</Card.Text>
+                                        <Card.Text>{recipe.totalDaily.K.label} {Math.round(recipe.totalDaily.K.quantity / recipe.yield)}{recipe.totalDaily.K.unit}</Card.Text>
+                                        <Card.Text>{recipe.totalDaily.ZN.label} {Math.round(recipe.totalDaily.ZN.quantity / recipe.yield)}{recipe.totalDaily.ZN.unit}</Card.Text>
+                                    </Col>
+                                </Row>
                             </ListGroup>
                         </Tab>
                         <Tab eventKey="comments" title="Comments">
@@ -183,6 +188,7 @@ function RecipeCard() {
                 </Row>
                 <div>
                     <Row>
+                        {error && <span className="error">{error}</span>}
                         <Col md="5">
                             <Form.Control defaultValue={""} onChange={handleRequest} type="text" placeholder="Give your recipe a category" />
                         </Col>

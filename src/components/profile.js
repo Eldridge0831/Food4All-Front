@@ -14,7 +14,7 @@ const Profile = () => {
 
   useEffect(() => {
     (async function () {
-      const urlString = " https://food4all-back.herokuapp.com/user" + email; //TODO. Get correct url
+      const urlString = "https://food4all-back.herokuapp.com/users" + email; //TODO. Get correct url
       await fetch(urlString, {
         method: "GET",
         headers: {

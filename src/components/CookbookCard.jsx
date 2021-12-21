@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Card, Col, Row, Tab, Tabs, ListGroup, Button, FormControl, Form } from 'react-bootstrap';
@@ -18,10 +18,10 @@ function CookbookCard() {
     const singleRecipeData = useSelector((state) => state.cookbookCardReducer);
     const commentsData = useSelector((state) => state.commentsReducer);
     const recipe = singleRecipeData[0]
+    
 
 
     function postCookbook() {
-        console.log(categoryValue)
         setDisableCookbook(true)
         setDisableDelete(false)
         setDisableUpdate(false)
@@ -49,7 +49,7 @@ function CookbookCard() {
     function updateCookbook() {
         // let user_Id = localStorage.getItem("UserID");
         let url = "favorite/modify/" + recipe.label;
-        console.log(url)
+        // console.log(url)
         fetch("http://localhost:9000/" + url, {
             method: "PUT",
             headers: {
@@ -73,7 +73,6 @@ function CookbookCard() {
 
     function deleteCookbook() {
         setDisableDelete(true)
-        console.log(recipe.label)
         // const user_id = localStorage.getItem("UserName");
         fetch("http://localhost:9000/favorite/" + recipe.label, {
             method: "DELETE",
@@ -89,18 +88,15 @@ function CookbookCard() {
         
             .then(res => res.json())
             .then(res => {
-                    alert("Recipe deleted!")
+                alert("Recipe deleted!")
             })
-            console.log(recipe.label, "#2")
     }
 
     const handleChange = (event) => {
         setComments(event.target.value)
-        console.log(comments)
     }
 
     const handleRequest = (event) => {
-        console.log("request made")
         setCategoryValue(event.target.value)
     }
 
