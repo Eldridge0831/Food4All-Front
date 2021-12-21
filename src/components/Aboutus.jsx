@@ -1,15 +1,15 @@
 import React from "react";
-import { Card, ListGroupItem,} from "react-bootstrap";
-import ListGroup from "react-bootstrap/ListGroup";
-import { Github, Linkedin, EnvelopeFill } from "react-bootstrap-icons";
-import Vivek from "../assets/vivek.jpg";
-import Charles from "../assets/charles.jpg";
-import Tim from "../assets/tim.jpg";
+// import { Card, ListGroupItem,} from "react-bootstrap";
+// import ListGroup from "react-bootstrap/ListGroup";
+// import { Github, Linkedin, EnvelopeFill } from "react-bootstrap-icons";
+// import Vivek from "../assets/vivek.jpg";
+// import Charles from "../assets/charles.jpg";
+// import Tim from "../assets/tim.jpg";
 
 function Aboutus() {
   return (
     <div className= "about-us-container d-flex align-items-center justify-content-center mt-5">
-      <Card  border="primary" style={{ maxWidth: '20rem' }}>
+      {/* <Card  border="primary" style={{ maxWidth: '20rem' }}>
         <Card.Img variant="top" src={Vivek} />
         <Card.Body>
           <Card.Title>Vivek Thakore</Card.Title>
@@ -94,7 +94,7 @@ function Aboutus() {
             </a>
           </ListGroupItem>
         </ListGroup>
-      </Card>
+      </Card> */}
     </div>
   );
 }
