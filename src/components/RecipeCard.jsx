@@ -34,7 +34,7 @@ function RecipeCard() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    user_id: "4",
+                    user_id: "3",
                     category: categoryValue,
                     recipe: singleRecipeData,
                     commentSection: comments,
@@ -64,7 +64,7 @@ function RecipeCard() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                user_id: "4",
+                user_id: "3",
                 category: categoryValue,
                 recipe: singleRecipeData,
                 commentSection: comments,
