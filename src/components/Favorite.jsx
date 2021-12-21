@@ -21,7 +21,7 @@ function Favorite(props) {
         // const user_id = localStorage.getItem("UserID");
 
         if (user_id !== "") {
-            let url = "https://food4all-back.herokuapp.com/favorite/" + "3";
+            let url = "http://localhost:9000/favorite/" + "3";
             fetch(url, {
                 method: "GET",
                 headers: {

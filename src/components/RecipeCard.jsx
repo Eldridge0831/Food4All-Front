@@ -23,7 +23,7 @@ function RecipeCard() {
     function postCookbook() {
         setError("")
         // const user_id = localStorage.getItem("UserName")
-        const user_id = "4"
+        const user_id = "3"
 
         if (user_id !== "") {
             // console.log(user_id)
