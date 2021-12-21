@@ -38,7 +38,7 @@ function Aboutus() {
         </ListGroup>
       </Card>
 
-      <Card border="primary" style={{ maxWidth: '20rem' }}>
+      <Card border="primary" style={{ maxWidth: '20rem', marginLeft: '1.5rem', marginRight:'1.5rem' }}>
         <Card.Img variant="top" src={Charles} />
         <Card.Body>
           <Card.Title>Charles Eldrigde</Card.Title>
@@ -67,8 +67,8 @@ function Aboutus() {
         </ListGroup>
       </Card>
 
-      <Card border="primary" style={{ maxWidth: '20rem' }}>
-        <Card.Img variant="top" src={Tim} />
+      <Card border="primary" style={{ maxWidth: '20rem', height:'35.5rem',  }}>
+        <Card.Img variant="top" src={Tim} style={{height:'80%'}}/>
         <Card.Body>
           <Card.Title>Tim Johns</Card.Title>
           <Card.Text>Web Developer</Card.Text>
