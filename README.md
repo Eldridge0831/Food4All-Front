@@ -40,7 +40,7 @@ Food for All is an application developed in December of 2021.  The purpose behin
 ## Contributors
 
 - Vivek  (Databases, Database hosting, Navbar AboutUs, Repo set-up)
-- Tim  (Login, Registration,Navbar, Jira set-up)
+- Tim  (Login, Registration , Navbar, Auth0, Styling, Jira set-up)
 - Charles Eldridge - (React/Redux components, API call GURU, ReadME, Scrum Master, Heroku hosting)
 
 <a href="https://github.com/Eldridge0831/Food4All-Front/graphs/contributors">
