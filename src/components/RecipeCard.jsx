@@ -23,7 +23,7 @@ function RecipeCard() {
     function postCookbook() {
         setError("")
         // const user_id = localStorage.getItem("UserName")
-        const user_id = "4"
+        const user_id = "3"
 
         if (user_id !== "") {
             // console.log(user_id)
@@ -34,7 +34,7 @@ function RecipeCard() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    user_id: "4",
+                    user_id: "3",
                     category: categoryValue,
                     recipe: singleRecipeData,
                     commentSection: comments,
@@ -64,7 +64,7 @@ function RecipeCard() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                user_id: "4",
+                user_id: "3",
                 category: categoryValue,
                 recipe: singleRecipeData,
                 commentSection: comments,
