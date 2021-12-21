@@ -43,7 +43,7 @@ function Favorite(props) {
     // retrieving favorites by category
     const categoryList = (event) => {
         setCookbookData([])
-        let url = "http://localhost:9000/favorite/" + "3" + "/" + categoryValue;
+        let url = "https://food4all-back.herokuapp.com/favorite/" + "3" + "/" + categoryValue;
         console.log(url)
         fetch(url, {        
             method: "GET",
