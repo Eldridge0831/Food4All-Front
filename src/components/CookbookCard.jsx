@@ -7,15 +7,16 @@ import { FaBookOpen } from "react-icons/fa"; //for favoriting recipes
 import { FaRedoAlt } from "react-icons/fa";
 import { FaMinusCircle } from "react-icons/fa";
 
-function RecipeCard() {
+function CookbookCard() {
 
-    const [disableCookbook, setDisableCookbook] = useState(false);
-    const [disableUpdate, setDisableUpdate] = useState(true);
-    const [disableDelete, setDisableDelete] = useState(true);
+    const [disableCookbook, setDisableCookbook] = useState(true);
+    const [disableUpdate, setDisableUpdate] = useState(false);
+    const [disableDelete, setDisableDelete] = useState(false);
     const [comments, setComments] = useState("");
     const [categoryValue, setCategoryValue] = useState("none");
 
-    const singleRecipeData = useSelector((state) => state.singleRecipeReducer);
+    const singleRecipeData = useSelector((state) => state.cookbookCardReducer);
+    const commentsData = useSelector((state) => state.commentsReducer);
     const recipe = singleRecipeData[0]
 
 
@@ -41,9 +42,7 @@ function RecipeCard() {
         })
             .then(res => (res.json()))
             .then(res => {
-                if (res.status === "Recipe added!") {
-                    alert("Recipe added!");
-                }
+                    alert("Recipe added!")
             })
     }
 
@@ -174,7 +173,7 @@ function RecipeCard() {
                                     </InputGroup>
                                 </Col>
                                 <Col md="6">
-                                    <Card.Text></Card.Text>
+                                    <Card.Text>{commentsData}</Card.Text>
                                 </Col>
                             </Row>
                         </Tab>
@@ -210,4 +209,4 @@ function RecipeCard() {
     )
 }
 
-export default RecipeCard;
+export default CookbookCard;

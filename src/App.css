@@ -1,4 +1,4 @@
-.Recipe-card-container,
+.Recipe-card-container,.option-card-container,
 .sc-dPiLbb,
 .ina-DuF {
   border-radius: 10px;
@@ -24,6 +24,7 @@
 .recipe-container {
   margin-left: 21%;
   margin-right: 15%;
+  
 }
 .nutritionData {
   margin-top: 20px;
@@ -104,15 +105,8 @@
 .search {
   margin-left: 15px;
 }
-.sideNav {
-  position: fixed;
-  top: 80px;
-  bottom: 0;
-  left: 0;
-  z-index: 1000;
-  display: block;
-  padding: 20px;
-  overflow-x: hidden;
+.navbar {
+   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   background-image: linear-gradient(
     to right,
@@ -124,6 +118,17 @@
     #7edbdc 100%
   );
   border-right: 1px solid #eee;
+}
+#navLogo{
+  border-radius:20px
+}
+.NutritionData{
+  margin-top:20px;
+}
+.btn{
+  margin-left: 10px;
+  
+  
 }
 
 .App {

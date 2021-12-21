@@ -6,8 +6,8 @@ import { Auth0Provider } from "@auth0/auth0-react";
 
 const Auth0ProviderWithHistory = ({ children }) => {
   const history = useHistory();
-  const domain = "dev-oalrznsx.us.auth0.com"; 
-  const clientId ="54S0q4qoMvZZP0Eibr6GLG7mEEB0MD8l";  //passed as props to provider below
+  const domain = process.env.REACT_APP_AUTH0_DOMAIN;
+  const clientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
   const audience = process.env.REACT_APP_AUTH0_AUDIENCE;
 
   //Redirect to Page when user logs in
@@ -20,7 +20,9 @@ const Auth0ProviderWithHistory = ({ children }) => {
 
     
 
-    <Auth0Provider domain={domain} clientId={clientId} redirectUri="https://food4all-front.herokuapp.com" onRedirectCallback="https://food4all-front.herokuapp.com/callback" audience={audience}>
+
+    <Auth0Provider domain={domain} clientId={clientId} redirectUri={window.location.origin} onRedirectCallback={onRedirectCallback} audience={audience}>
+
 
       {children}
     </Auth0Provider>
