@@ -212,12 +212,13 @@ function RecipeSearch(props) {
                     </div>
                 </Form>
             </Container>
-            <div className="recipe-container">
+            <div className="recipe-container" >
                 <Row>
                     {recipeData && recipeData.map((recipe, index) => {
                         return (
-                            <Col key={index} xs={12} sm={6} md={6} lg={4} xl={3}
-                                className="mb-6">
+                            <Col key={index} xs={12} sm={6} md={6} lg={4} xl={3}                           
+                            className="mb-6">
+                                
                                 <DisplayCard index={index} recipe={recipe.recipe} />
                             </Col>
                         )
