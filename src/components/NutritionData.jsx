@@ -61,7 +61,7 @@ function NutritionData (props) {
             <div className="NutritionData">
                 <h1>Food Nutrition & Alternatives</h1>
                 <input value={searchValue} onChange={(event) => searchRequest(event)} type="text" placeholder="Your Item" />
-                <Button type="submit" id="search" onClick={(event) => fetchNutrition(event)}>Search</Button>
+                <Button type="submit" className="nutritionBtn" onClick={(event) => fetchNutrition(event)}>Search</Button>
             </div>
             <div className="recipe-container">
                 <Row>
