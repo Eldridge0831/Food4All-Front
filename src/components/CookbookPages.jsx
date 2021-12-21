@@ -13,9 +13,8 @@ const CookbookPages = (props) => {
   const history = useHistory();
   const cookbookItem = props.recipe;
   const cookbookComments = props.commentSection;
-
-  // console.log(cookbookItem)
-  // console.log(cookbookComments)
+  const cookbookCategory = props.category;
+  // console.log(cookbookCategory)
   let item = "";
 
   Object.keys(cookbookItem).forEach(function(recipe) {
@@ -41,7 +40,7 @@ const CookbookPages = (props) => {
         <Card.Body>
           <Card.Title>{item.label}</Card.Title>
           <Card.Text>{item.source}</Card.Text>
-          
+          <Card.Text>{cookbookCategory}</Card.Text>
           <Container>
             <Row>
               <Col>

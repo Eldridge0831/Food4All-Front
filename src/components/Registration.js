@@ -24,6 +24,7 @@ function Registration() {
       .then((res) => {
         const userName = document.getElementById("InputUserName").value;
         localStorage.setItem("UserName", userName);
+        console.log("UserName");
       })
       .then((res) => {
         let user_name = localStorage.getItem("UserName");

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Card, Col, Row, Tab, Tabs, ListGroup, Button, FormControl, Form } from 'react-bootstrap';
@@ -18,6 +18,7 @@ function CookbookCard() {
     const singleRecipeData = useSelector((state) => state.cookbookCardReducer);
     const commentsData = useSelector((state) => state.commentsReducer);
     const recipe = singleRecipeData[0]
+    
 
 
     function postCookbook() {
@@ -47,6 +48,8 @@ function CookbookCard() {
     }
 
     function updateCookbook() {
+        console.log(comments)
+        console.log(categoryValue)
         // let user_Id = localStorage.getItem("UserID");
         let url = "favorite/modify/" + recipe.label;
         console.log(url)
@@ -89,9 +92,8 @@ function CookbookCard() {
         
             .then(res => res.json())
             .then(res => {
-                    alert("Recipe deleted!")
+                alert("Recipe deleted!")
             })
-            console.log(recipe.label, "#2")
     }
 
     const handleChange = (event) => {

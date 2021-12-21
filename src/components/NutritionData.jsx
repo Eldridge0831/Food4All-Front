@@ -7,7 +7,7 @@ import { useHistory } from "react-router-dom";
 
 function NutritionData (props) {
     const [searchValue, setSearchValue] = useState("");
-    const [nutritionData, setNutritionData] = useState([])
+    // const [nutritionData, setNutritionData] = useState([])
     const [alternateOptions, setAlternateOptions] = useState([]);
     const history = useHistory ();
 
