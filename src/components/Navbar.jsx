@@ -11,7 +11,7 @@ function NavBar() {
 return  (
   <div>
     <Navbar collapseOnSelect expand="sm" className="nav-background"  variant="dark" >
-      <Navbar.Brand href="/home" className="ms-5">
+      <Navbar.Brand href="/" className="ms-5">
         <img src={logo} alt="logo" id="navLogo" width="30%" height="30%"  class="d-inline-block align-top"/>
       </Navbar.Brand>
       <Container>
@@ -24,7 +24,7 @@ return  (
             <Link to="/nutrition" style={{ textDecoration: "none" }} className="nav-link text-black">
               Nutrition Data
             </Link>
-            <Link to="/favorites" style={{ textDecoration: "none" }} className="nav-link text-black">
+            <Link to="/favorite" style={{ textDecoration: "none" }} className="nav-link text-black">
               My CookBook
             </Link>
             <Link to="/profile" style={{ textDecoration: "none" }} className="nav-link text-black">

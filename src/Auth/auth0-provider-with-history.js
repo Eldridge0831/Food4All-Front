@@ -1,7 +1,7 @@
 /* Uses composition to make react router hooks available to auth0 provider*/
 
 import React from "react";
-import { useHistory, navigate} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 const Auth0ProviderWithHistory = ({ children }) => {
