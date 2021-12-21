@@ -15,7 +15,7 @@ function NutritionData (props) {
     // API call
     function fetchNutrition(event) {
         event.preventDefault()
-        console.log("api called");
+        // console.log("api called");
 
         const request = new XMLHttpRequest();
         request.onreadystatechange = function () {
@@ -59,7 +59,7 @@ function NutritionData (props) {
     return (
         <div>
             <div className="NutritionData">
-                <h1>Food Nutrition & Alternatives</h1>
+                <h1>Food Nutrition Look-Up</h1>
                 <input value={searchValue} onChange={(event) => searchRequest(event)} type="text" placeholder="Your Item" />
                 <Button type="submit" className="nutritionBtn" onClick={(event) => fetchNutrition(event)}>Search</Button>
             </div>

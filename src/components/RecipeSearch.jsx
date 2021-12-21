@@ -41,7 +41,7 @@ function RecipeSearch(props) {
         return axios.get(url)
             .then(recipes => recipes.data)
             .then(data => {
-                console.log(data);
+                // console.log(data);
 
                 if (data['hits'].length === 0) {
                     console.log(data['hits'])
@@ -49,7 +49,7 @@ function RecipeSearch(props) {
                     history.push('/404') // redirect for bad request
                 } else {
                     setRecipeData(data['hits'])
-                    console.log(recipeData)
+                    // console.log(recipeData)
                     setPageData(data['_links'])
                     setPreviousData(url)
                 }

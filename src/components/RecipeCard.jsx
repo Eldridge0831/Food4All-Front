@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useSelector } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.css';
-import { Card, Col, Row, Tab, Tabs, ListGroup, Button, FormControl, Form, Container } from 'react-bootstrap';
+import { Card, Col, Row, Tab, Tabs, ListGroup, Button, FormControl, Form } from 'react-bootstrap';
 import InputGroup from 'react-bootstrap/InputGroup';
 import { FaBookOpen } from "react-icons/fa"; //for favoriting recipes
 import { FaRedoAlt } from "react-icons/fa";
 import { FaMinusCircle } from "react-icons/fa";
-import { ReactDOM } from 'react-dom';
+// import { ReactDOM } from 'react-dom';
 
 function RecipeCard() {
 
@@ -21,16 +21,12 @@ function RecipeCard() {
 
 
     function postCookbook() {
-        console.log(categoryValue)
-        // setDisableCookbook(true)
-        // setDisableDelete(false)
-        // setDisableUpdate(false)
         setError("")
         // const user_id = localStorage.getItem("UserName")
         const user_id = "4"
 
         if (user_id !== "") {
-            console.log(user_id)
+            // console.log(user_id)
             fetch("http://localhost:9000/favorite", {
                 method: "POST",
                 headers: {
@@ -60,7 +56,7 @@ function RecipeCard() {
     function updateCookbook() {
         // const user_Id = localStorage.getItem("UserName");
         let url = "favorite/modify/" + recipe.label;
-        console.log(url)
+        // console.log(url)
         fetch("http://localhost:9000/" + url, {
             method: "PUT",
             headers: {
@@ -84,7 +80,7 @@ function RecipeCard() {
 
     function deleteCookbook() {
         setDisableDelete(true)
-        console.log(recipe.label)
+        // console.log(recipe.label)
         // const user_id = localStorage.getItem("UserName");
         fetch("http://localhost:9000/favorite/" + recipe.label, {
             method: "DELETE",
@@ -106,7 +102,6 @@ function RecipeCard() {
 
     const handleChange = (event) => {
         setComments(event.target.value)
-        console.log(comments)
     }
 
     const handleRequest = (event) => {

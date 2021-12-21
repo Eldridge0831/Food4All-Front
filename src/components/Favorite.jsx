@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Form, Container, Row, Col, Button } from 'react-bootstrap';
 import CookbookPages from './CookbookPages';
 // import {useDispatch} from 'react-redux';
-import { ReactDOM } from 'react-dom';
+// import { ReactDOM } from 'react-dom';
 
 function Favorite(props) {
 

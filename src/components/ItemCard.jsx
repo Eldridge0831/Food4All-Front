@@ -10,7 +10,7 @@ function ItemCard() {
 
     const singleItemData = useSelector((state) => state.singleItemReducer);
     const singleItem = singleItemData[0];
-    console.log(singleItemData[0]);
+    // console.log(singleItemData[0]);
 
 
     // const alternateIngredient = (event) => {
@@ -36,8 +36,8 @@ function ItemCard() {
                                 </Col>
                                 <Col md='8'>
                                     <Card.Body>
-                                        <Card.Title>{item.label}</Card.Title>
-                                        <Card.Text>Calories: {singleItem.nutrients.ENERC_KCAL}<br />Fat: {singleItem.nutrients.FAT}g<br />Protein: {singleItem.nutrients.PROCNT}g<br />Carbs: {singleItem.nutrients.CHOCDF}g<br />Fiber: {singleItem.nutrients.FIBTG}g</Card.Text>
+                                        <Card.Title key="{item.label}">{item.label}</Card.Title>
+                                        <Card.Text key="{item.nutrients}">Calories: {singleItem.nutrients.ENERC_KCAL}<br />Fat: {singleItem.nutrients.FAT}g<br />Protein: {singleItem.nutrients.PROCNT}g<br />Carbs: {singleItem.nutrients.CHOCDF}g<br />Fiber: {singleItem.nutrients.FIBTG}g</Card.Text>
                                     </Card.Body>
                                 </Col>
                                 <Container>

@@ -13,7 +13,6 @@ const NutritionCard = (props) => {
   let picSrc = "";
 
   const pic = (optionItem.image)
-  console.log(pic);
     if (pic === undefined) {
         picSrc = NoPicture;
     } else {

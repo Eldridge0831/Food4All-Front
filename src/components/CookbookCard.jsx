@@ -22,7 +22,6 @@ function CookbookCard() {
 
 
     function postCookbook() {
-        console.log(categoryValue)
         setDisableCookbook(true)
         setDisableDelete(false)
         setDisableUpdate(false)
@@ -48,11 +47,9 @@ function CookbookCard() {
     }
 
     function updateCookbook() {
-        console.log(comments)
-        console.log(categoryValue)
         // let user_Id = localStorage.getItem("UserID");
         let url = "favorite/modify/" + recipe.label;
-        console.log(url)
+        // console.log(url)
         fetch("http://localhost:9000/" + url, {
             method: "PUT",
             headers: {
@@ -76,7 +73,6 @@ function CookbookCard() {
 
     function deleteCookbook() {
         setDisableDelete(true)
-        console.log(recipe.label)
         // const user_id = localStorage.getItem("UserName");
         fetch("http://localhost:9000/favorite/" + recipe.label, {
             method: "DELETE",
@@ -98,11 +94,9 @@ function CookbookCard() {
 
     const handleChange = (event) => {
         setComments(event.target.value)
-        console.log(comments)
     }
 
     const handleRequest = (event) => {
-        console.log("request made")
         setCategoryValue(event.target.value)
     }
 
