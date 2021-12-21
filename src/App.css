@@ -125,7 +125,13 @@
 .NutritionData{
   margin-top:20px;
 }
-
+.rc-5{
+  height: 25rem;
+ 
+}
+.card-title.h5 {
+font-size: .9rem;
+}
 
 .App {
   text-align: center;
