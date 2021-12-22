@@ -17,8 +17,8 @@ Food for All is an application developed in December of 2021.  The purpose behin
 ## Known Issues // Room for Improvement
 
 - Add a feature to look up alternate ingredients and store them for future reference.
+- AuthO interface with user database.
 
-  
 
 ## Scrum Tool
 
@@ -40,7 +40,7 @@ Food for All is an application developed in December of 2021.  The purpose behin
 ## Contributors
 
 - Vivek  (Databases, Database hosting, Navbar AboutUs, Repo set-up)
-- Tim  (Login, Registration , Navbar, Auth0, Styling, Jira set-up)
+- Tim  (Login, Registration , Navbar, Auth0, Styling, Jira set-up, styling)
 - Charles Eldridge - (React/Redux components, API call GURU, ReadME, Scrum Master, Heroku hosting)
 
 <a href="https://github.com/Eldridge0831/Food4All-Front/graphs/contributors">
